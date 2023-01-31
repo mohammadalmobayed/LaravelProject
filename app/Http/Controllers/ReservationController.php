@@ -30,14 +30,7 @@ class ReservationController extends Controller
             $res_to_send['Service'] = $service->Service_Name;
             $user=User::findorfail($res->User_Id );
             $res_to_send['User'] = $user->name;
-            $res_to_send['location']= $res->City."/".$res->Street_Name."/".$res->Building_Number;
-            // if (!$res->End_Time){
-            //     $res->End_Time = "not yet determined";
-            // }
-            $res_to_send['Time']= $res->Start_Time." To ".$res->End_Time;
-            // if (!$res->Total_Price){
-            //     $res->Total_Price = "not yet determined";
-            // }
+            $res_to_send['location']= $res->City."/".$res->Street_Name."/".$res->Building_Number;            $res_to_send['Time']= $res->Start_Time." To ".$res->End_Time;
             $res_to_send['Total_Price']= $res->Total_Price;
             $res_to_send['Status']= $res->Status;
             $res_to_send['Reject_Reason']= $res->Reject_Reason;
